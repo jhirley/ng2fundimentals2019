@@ -11,6 +11,7 @@ export class EventsListComponent implements OnInit {
     name:'Angular connect',
     date:'9/26/2036',
     price: 599.99,
+    time: '9am GMT',
     imageUrl: '/assets/images/angularconnect-shield.png',
     location:{
       address:'1057 DT',
@@ -23,4 +24,7 @@ export class EventsListComponent implements OnInit {
   ngOnInit() {
   }
 
+  handleEventClicked(data){
+    console.log(data);
+  }
 }
