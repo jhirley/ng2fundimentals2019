@@ -22,4 +22,17 @@ export class EventThumbnailComponent implements OnInit {
   logFoo(){
     console.log('foo');
   };
+
+  getStartTimeClass(){
+    // const isEarlyStart = this.event && this.event.time === '8:00 am';
+    // return {green: isEarlyStart, bold: isEarlyStart}
+
+    // if (this.event && this.event.time === '8:00 am')
+    //   return 'green bold';
+    // return '';
+
+    if (this.event && this.event.time === '8:00 am')
+    return ['green', 'bold'];
+  return [];
+  }
 }

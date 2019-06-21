@@ -1,13 +1,21 @@
 <div class="well hoverwell thumbnail">
-    <h4>{{event.name}}</h4>
-    <div>Date: {{event.date}}</div>
-    <div>Time: {{event.time}}</div>
-    <div>Price: ${{event.price}}</div>
-    <div>
-      <br>
-      <span>Location: {{event.location.address}}, </span>
-      <span class="pad-left">City: {{event.location.city}}, Country: {{event.location.country}}</span>
+    <h4>{{event?.name}}</h4>
+    <div>Date: {{event?.date}}</div>
+    <div [style.color]="event?.time === '8:00 am' ? 'green' : '#bbb' " [ngClass]="{red: event?.time === '10:00 am', bold: event?.time === '10:00 am'}" [ngSwitch]="event?.time"> Time: {{event?.time}}
+    <!-- <div [class.green]="event?.time === '8:00 am'" [ngClass]="{red: event?.time === '10:00 am', bold: event?.time === '10:00 am'}" [ngSwitch]="event?.time"> Time: {{event?.time}} -->
+    <!-- <div [ngClass]="getStartTimeClass()" [ngSwitch]="event?.time"> Time: {{event?.time}} -->
+        <span *ngSwitchCase="'8:00 am'">( Early Start )</span>
+      <span *ngSwitchCase="'10:00 am'">( Late Start )</span>
+      <span *ngSwitchDefault>( Normal Start )</span>
     </div>
+    <div>Price: ${{event?.price}}</div>
+    <div *ngIf="event?.location">
+      <br>
+      <span>Location: {{event?.location?.address}}, </span>
+      <br>
+      <span class="pad-left">City: {{event?.location?.city}}, Country: {{event?.location?.country}}</span>
+    </div>
+    <div [hidden]="!event?.onlineURL">Online Url: {{event?.onlineURL}}</div>
   
     <button class="btn btn-primary" (click)="handleClickMe()">Click ME</button>
   </div>

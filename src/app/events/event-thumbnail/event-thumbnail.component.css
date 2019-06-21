@@ -1,4 +1,6 @@
-.pad-left{
-    margin-left: 10px;
-}
+.pad-left{margin-left: 10px;}
 .well div {color: #bbb;}
+.thumbnail {min-height: 210px;}
+.green {color: green !important;}
+.red {color: red !important;}
+.bold { font-weight: bold;}
