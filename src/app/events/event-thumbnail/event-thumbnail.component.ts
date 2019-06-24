@@ -17,8 +17,10 @@ export class EventThumbnailComponent implements OnInit {
   }
 
   handleClickMe(){
+    console.log(this.event.name);
     this.eventClick.emit(this.event.name); 
   };
+
   logFoo(){
     console.log('foo');
   };
