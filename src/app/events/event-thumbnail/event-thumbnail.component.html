@@ -1,4 +1,4 @@
-<div class="well hoverwell thumbnail">
+<div [routerLink]="['/events', event.id]" class="well hoverwell thumbnail">
     <h4>{{event?.name}}</h4>
     <div>Date: {{event?.date}}</div>
     <div [style.color]="event?.time === '8:00 am' ? 'green' : '#bbb' " [ngClass]="{red: event?.time === '10:00 am', bold: event?.time === '10:00 am'}" [ngSwitch]="event?.time"> Time: {{event?.time}}
