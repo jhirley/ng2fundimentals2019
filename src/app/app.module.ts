@@ -15,11 +15,11 @@ import {
   EventsListResolver
  } from "./events/index";
 
- import { NavbarComponent } from './navbar/navbar.component';
-
+import { NavbarComponent } from './navbar/navbar.component';
 import { Error404Component } from "./errors/404.component";
-
 import { ToastrService } from './common/toastr.service';
+
+import { AuthService } from "./user/index";
 
 @NgModule({
   declarations: [
@@ -39,7 +39,8 @@ import { ToastrService } from './common/toastr.service';
     EventService,
     ToastrService,
     EventRouteActivatorService,
-    EventsListResolver
+    EventsListResolver,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

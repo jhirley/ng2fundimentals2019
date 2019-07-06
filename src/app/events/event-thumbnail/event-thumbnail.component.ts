@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 // import { EventEmitter } from 'protractor';
+import { IEvent } from "../shared/index";
 
 @Component({
   selector: 'event-thumbnail',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./event-thumbnail.component.css']
 })
 export class EventThumbnailComponent implements OnInit {
-  @Input() event: any;
+  @Input() event: IEvent;
   @Output() eventClick = new EventEmitter();  
   someProperty: any = "some value";
 
