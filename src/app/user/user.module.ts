@@ -8,8 +8,10 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 // import { ToastrService } from '../common/toastr.service';
 
 import { userRoutes } from "./user.routes";
-import { ProfileComponent } from "./profile.component";
-import { LoginComponent } from './login/login.component';
+import { 
+  ProfileComponent, 
+  LoginComponent } from "./index";
+
 
 
 @NgModule({
