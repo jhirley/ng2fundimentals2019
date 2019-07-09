@@ -13,9 +13,12 @@ import {
   EventThumbnailComponent,
   EventDetailsComponent,
   CreateEventComponent,
+  CreateSessionComponent,
+
   EventService,
   EventRouteActivatorService,
-  EventsListResolver
+  EventsListResolver,
+
  } from "./index";
 
 
@@ -26,6 +29,7 @@ import {
     EventThumbnailComponent,
     EventDetailsComponent,
     CreateEventComponent,
+    CreateSessionComponent
   
   ],
   imports: [
