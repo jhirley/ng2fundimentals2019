@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 // import { ToastrService } from '../common/toastr.service';
 
 import { eventRoutes } from "./events.routes";
+import { CollapsibleWellComponent, CollapsibleTwoWindowWellComponent } from "../common/index";
 import { 
   EventsListComponent,
   EventThumbnailComponent,
@@ -29,7 +30,9 @@ import {
     EventDetailsComponent,
     CreateEventComponent,
     CreateSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    CollapsibleWellComponent,
+    CollapsibleTwoWindowWellComponent
   
   ],
   imports: [

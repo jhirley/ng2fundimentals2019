@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { Error404Component } from "./errors/404.component";
-import { ToastrService } from './common/toastr.service';
+import { ToastrService } from './common/index';
 
 import { AuthService } from "./user/index";
 import { EventService } from "./events/index";
