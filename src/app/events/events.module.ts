@@ -14,6 +14,7 @@ import {
   EventDetailsComponent,
   CreateEventComponent,
   CreateSessionComponent,
+  SessionListComponent,
 
   EventService,
   EventRouteActivatorService,
@@ -21,15 +22,14 @@ import {
 
  } from "./index";
 
-
-
 @NgModule({
   declarations: [
     EventsListComponent,
     EventThumbnailComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    CreateSessionComponent
+    CreateSessionComponent,
+    SessionListComponent
   
   ],
   imports: [

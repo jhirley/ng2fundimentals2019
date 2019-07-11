@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Router } from "@angular/router";
 
@@ -6,13 +6,16 @@ import { EventService, ISession, restrictedWords } from "../shared/index";
 
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 
+
 @Component({
-  selector: 'app-create-session',
+  selector: 'create-session',
   templateUrl: './create-session.component.html',
   styleUrls: ['./create-session.component.css']
 })
 export class CreateSessionComponent implements OnInit {
 
+  @Output() saveNewSession = new EventEmitter();
+  @Output() cancelAddSession = new EventEmitter();
   isDirty: boolean = true;
   newSessionForm: FormGroup;
   name: FormControl;
@@ -44,9 +47,9 @@ export class CreateSessionComponent implements OnInit {
   }
 
   saveSession(formValues){
-    console.log(formValues);
+    // console.log(formValues);
     // this.eventService.saveEvent(formValues);
-    let session:ISession ={
+    let session:ISession = {
       id: undefined,
       name: formValues.name,
       duration: + formValues.duration,
@@ -55,10 +58,13 @@ export class CreateSessionComponent implements OnInit {
       abstract: formValues.abstract,
       voters: []
     }
+    this.saveNewSession.emit(session);
+
     this.isDirty = false;
-    this.router.navigate(['/events']);
+    // this.router.navigate(['/events']);
   }
   cancel(){
-    this.router.navigate(['/events']);
+    // this.router.navigate(['/events']);
+    this.cancelAddSession.emit();
   }
 }
