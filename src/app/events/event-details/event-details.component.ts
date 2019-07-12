@@ -20,6 +20,8 @@ export class EventDetailsComponent{
 
     event: IEvent;
     addMode: Boolean;
+    filterBy:string = 'all';
+    sortBy:string = 'name';
 
     ngOnInit(){
         this.event = this.eventService.getEvent(+this.route.snapshot.params['id']);

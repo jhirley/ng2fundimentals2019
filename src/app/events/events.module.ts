@@ -21,6 +21,8 @@ import {
   EventRouteActivatorService,
   EventsListResolver,
 
+  DurrationPipe
+
  } from "./index";
 
 @NgModule({
@@ -32,7 +34,9 @@ import {
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
-    CollapsibleTwoWindowWellComponent
+    CollapsibleTwoWindowWellComponent,
+    
+    DurrationPipe
   
   ],
   imports: [

@@ -15,7 +15,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class CollapsibleTwoWindowWellComponent implements OnInit {
     @Input() title: string;
-    visible: boolean;
+    visible: boolean = true;
 
     constructor() { }
 
