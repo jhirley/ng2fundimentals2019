@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { Error404Component } from "./errors/404.component";
-import { ToastrService } from './common/index';
 
 import { AuthService } from "./user/index";
 import { EventService } from "./events/index";
+
+declare let toastr:Toastr;
+import { TOASTR_TOKEN, Toastr } from './common/index';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import { EventService } from "./events/index";
   ],
   providers: [
     EventService,
-    ToastrService,
+    { provide: TOASTR_TOKEN , useValue: toastr},
     AuthService
   ],
   bootstrap: [AppComponent]
