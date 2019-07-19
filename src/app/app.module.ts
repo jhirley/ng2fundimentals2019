@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from "@angular/forms";
 // import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from './app.routing.module';
@@ -11,25 +12,34 @@ import { Error404Component } from "./errors/404.component";
 import { AuthService } from "./user/index";
 import { EventService } from "./events/index";
 
-declare let toastr:Toastr;
-import { TOASTR_TOKEN, Toastr } from './common/index';
+let toastr:Toastr = window['toastr'];
+let jQuery = window['$'];
+import { 
+  TOASTR_TOKEN, Toastr, 
+  JQUERY_TOKEN, 
+  SimpleModalComponent ,
+  ModalTriggerDirective
+} from './common/index';
 
 @NgModule({
   declarations: [
     AppComponent,
     Error404Component,
     NavbarComponent,
+    SimpleModalComponent,
 
+    ModalTriggerDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // FormsModule,
+    FormsModule,
     // ReactiveFormsModule
   ],
   providers: [
     EventService,
     { provide: TOASTR_TOKEN , useValue: toastr},
+    { provide: JQUERY_TOKEN , useValue: jQuery},
     AuthService
   ],
   bootstrap: [AppComponent]

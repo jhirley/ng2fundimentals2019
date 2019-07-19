@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Params } from "@angular/router";
 import { EventService } from "../shared/event.service";
 import { IEvent, ISession } from "../shared/index";
 import { throwError } from 'rxjs';
@@ -24,8 +24,14 @@ export class EventDetailsComponent{
     sortBy:string = 'name';
 
     ngOnInit(){
-        this.event = this.eventService.getEvent(+this.route.snapshot.params['id']);
+        // this.event = this.eventService.getEvent(+this.route.snapshot.params['id']);
         // console.log(this.event);
+        this.route.params.forEach((params : Params) => {
+            this.event = this.eventService.getEvent(+params['id']);
+            this.addMode = false;
+            this.filterBy = 'all';
+            this.sortBy = 'name';
+        })
     }
 
     addSession(){
